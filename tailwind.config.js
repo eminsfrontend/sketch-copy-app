@@ -18,14 +18,17 @@ module.exports = {
     extend: {
       fontSize: {
         subtitleDesctop: "56px",
+        subtitleTablet: "44px",
         subtitleMobile: "36px",
       },
       lineHeight: {
         subtitleDesctop: "56px",
+        subtitleTablet: "44px",
         subtitleMobile: "36px",
       },
       boxShadow: {
         light: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        doubled: "0 4px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.08)"
       },
     },
   },

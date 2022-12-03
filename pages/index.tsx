@@ -12,9 +12,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <div className="min-h-screen w-full overflow-hidden flex flex-col items-center relative px-4 md:px-0 py-16">
+        {/* Area 1 */}
+        <div className="min-h-screen w-full overflow-hidden flex flex-col items-center relative px-4 lg:px-0 py-16">
           {/* Background paralax image */}
-          <div className="absolute ml-6 md:ml-0 -right-1/2 md:-right-0 md:-left-[55%] md:top-1/2 md:-translate-y-1/2">
+          <div className="absolute ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[55%] lg:top-1/2 lg:-translate-y-1/2">
             <Image
               src="/accets/images/eye-shape-teal@2x.avif"
               alt="bg-image"
@@ -24,7 +25,7 @@ export default function Home() {
           </div>
           <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
             {/* Image/video container */}
-            <div className="overflow-hidden md:absolute md:top-1/2 md:-translate-y-1/2 md:-left-[30%] md:w-3/4 h-[90%] rounded-xl shadow-light border border-black border-opacity-10">
+            <div className="overflow-hidden lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-[30%] lg:w-3/4 h-[90%] md:max-h-[590px] xl:max-h-[90%] rounded-xl shadow-light border border-black border-opacity-10">
               <video
                 src="/accets/videos/real-time-collab-visual-v90.mp4"
                 autoPlay
@@ -33,11 +34,11 @@ export default function Home() {
               ></video>
             </div>
             {/* Info container */}
-            <div className="container max-w-6xl mx-auto flex justify-between md:gap-x-20">
-              <div className="md:flex-1" />
-              <div className="flex flex-1 flex-col gap-y-20 mt-20 md:mt-0">
-                <div className="flex flex-col gap-y-6 px-5 md:px-0">
-                  <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleDesctop md:leading-subtitleDesctop">
+            <div className="container max-w-6xl mx-auto flex justify-between lg:gap-x-20">
+              <div className="lg:flex-1" />
+              <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
+                <div className="flex flex-col gap-y-6 px-5 lg:px-0">
+                  <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
                     The all-in-one designer’s toolkit
                   </h2>
                   <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
@@ -48,15 +49,16 @@ export default function Home() {
                   </p>
                 </div>
                 <div className="flex flex-col gap-y-8">
-                  <div className="image-area">
+                  <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
                     <Image
                       src="/accets/images/native@2x.avif"
                       alt="image1"
                       width={524}
                       height={216}
+                      loading="lazy"
                     />
                   </div>
-                  <div className="flex flex-col gap-y-6 px-5 md:px-0">
+                  <div className="flex flex-col gap-y-6 px-5 lg:px-0">
                     <div className="flex flex-col gap-y-2">
                       <h3 className="text-dark font-bold text-lg leading-7">
                         Native macOS editor
@@ -85,6 +87,83 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Area 2 */}
+        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:pag-y-0 lg:gap-x-20 md:px-32 lg:px-0">
+          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
+            {/* Image - create image component with option items-(center, end, start) */}
+            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-end">
+              <Image
+                src="/accets/images/prototyping@2x.avif"
+                alt="prototype"
+                width={524}
+                height={216}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <h3 className="text-dark font-bold text-lg leading-7">
+                Prototyping
+              </h3>
+              <p className="text-dark font-medium text-base leading-6">
+                Bring your designs to life with easy-to-use tools. Test
+                prototypes on your devices. Or share a link with others so they
+                can try them out in any browser and give their feedback, for
+                free. With no plugins required.
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+            >
+              Discover Prototyping in Sketch
+              <Image
+                src="/accets/icons/arrow-right.svg"
+                alt="right-arrow"
+                width={24}
+                height={24}
+                className="opacity-30"
+              />
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
+            {/* Image - create image component with option items-(center, end, start) */}
+            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
+              <Image
+                src="/accets/images/collaboration@2x.avif"
+                alt="prototype"
+                width={524}
+                height={216}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <h3 className="text-dark font-bold text-lg leading-7">
+                Real-time collaboration
+              </h3>
+              <p className="text-dark font-medium text-base leading-6">
+                Work together in the same document, at the same time — right
+                inside the Mac app. No hassle, no save conflicts, no pinging
+                files back and forth. Just you, your collaborators, and an
+                infinite Canvas to explore.
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+            >
+              See collaboration in action
+              <Image
+                src="/accets/icons/arrow-right.svg"
+                alt="right-arrow"
+                width={24}
+                height={24}
+                className="opacity-30"
+              />
+            </Link>
           </div>
         </div>
       </main>
