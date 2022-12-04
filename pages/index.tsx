@@ -11,16 +11,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <header>
+        
+      </header>
+
+      <main className="overflow-hidden">
         {/* Area 1 */}
-        <div className="min-h-screen w-full overflow-hidden flex flex-col items-center relative px-4 lg:px-0 py-16">
+        <div className="min-h-screen w-full  flex flex-col items-center relative px-4 lg:px-0 py-16">
           {/* Background paralax image */}
-          <div className="absolute ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[55%] lg:top-1/2 lg:-translate-y-1/2">
+          <div className="absolute -z-10 ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[53%] lg:top-1/2 lg:-translate-y-1/2">
             <Image
-              src="/accets/images/eye-shape-teal@2x.avif"
+              src="/accets/images/eye-bg.svg"
               alt="bg-image"
               width={2040}
               height={1150}
+              loading="lazy"
             />
           </div>
           <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
@@ -156,6 +161,162 @@ export default function Home() {
               className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
             >
               See collaboration in action
+              <Image
+                src="/accets/icons/arrow-right.svg"
+                alt="right-arrow"
+                width={24}
+                height={24}
+                className="opacity-30"
+              />
+            </Link>
+          </div>
+        </div>
+
+        {/* Area 3 */}
+        <div className="min-h-screen w-full  flex flex-col items-center relative px-4 lg:px-0 py-16">
+          {/* Background paralax image */}
+          <div className="absolute mr-6 lg:mr-0 -left-1/2 lg:left-[50%] lg:-right-[53%] lg:top-1/2 lg:-translate-y-1/2">
+            <Image
+              src="/accets/images/rectangular-shape-bg.svg"
+              alt="bg-image"
+              width={773}
+              height={773}
+              loading="lazy"
+            />
+          </div>
+          <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
+            {/* Image/video container */}
+            <div className="overflow-hidden lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-right-[30%] lg:w-3/4 h-[90%] md:max-h-[590px] xl:max-h-[90%] rounded-xl shadow-light border border-black border-opacity-10">
+              <video
+                src="/accets/videos/handoff-visual-2.mp4"
+                autoPlay
+                loop
+                muted
+              ></video>
+            </div>
+            {/* Info container */}
+            <div className="container max-w-6xl mx-auto flex flex-row-reverse justify-between lg:gap-x-20">
+              <div className="lg:flex-1" />
+              <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
+                <div className="flex flex-col gap-y-6 px-5 lg:px-0">
+                  <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
+                    Scale up your design process
+                  </h2>
+                  <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
+                    Bring your projects and people together, share feedback,
+                    hand off to developers, and build out beautiful design
+                    systems — all in one place.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-y-8">
+                  <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
+                    <Image
+                      src="/accets/images/workspaces@2x.avif"
+                      alt="image1"
+                      width={524}
+                      height={216}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-y-6 px-5 lg:px-0">
+                    <div className="flex flex-col gap-y-2">
+                      <h3 className="text-dark font-bold text-lg leading-7">
+                        Workspaces
+                      </h3>
+                      <p className="text-dark font-medium text-base leading-6">
+                        With a Sketch Workspace, you get a home for storing
+                        files, sharing ideas, getting feedback, managing your
+                        team, distributing Libraries, handing off to developers
+                        and exploring your Design System. It’s all included in
+                        your subscription.
+                      </p>
+                    </div>
+                    <Link
+                      href="/"
+                      className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+                    >
+                      See what a Workspace can do
+                      <Image
+                        src="/accets/icons/arrow-right.svg"
+                        alt="right-arrow"
+                        width={24}
+                        height={24}
+                        className="opacity-30"
+                      />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Area 4 */}
+        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:pag-y-0 lg:gap-x-20 md:px-32 lg:px-0">
+          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
+            {/* Image - create image component with option items-(center, end, start) */}
+            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
+              <Image
+                src="/accets/images/design-systems@2x.avif"
+                alt="prototype"
+                width={524}
+                height={216}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <h3 className="text-dark font-bold text-lg leading-7">
+                Design systems
+              </h3>
+              <p className="text-dark font-medium text-base leading-6">
+                Build out your design systems with reusable Styles and
+                responsive Symbols. Manage them effortlessly on the Mac app or
+                in the browser, share them with your team and update them
+                everywhere in seconds.
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+            >
+              Discover design systems
+              <Image
+                src="/accets/icons/arrow-right.svg"
+                alt="right-arrow"
+                width={24}
+                height={24}
+                className="opacity-30"
+              />
+            </Link>
+          </div>
+
+          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
+            {/* Image - create image component with option items-(center, end, start) */}
+            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
+              <Image
+                src="/accets/images/handoff@2x.avif"
+                alt="prototype"
+                width={524}
+                height={216}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex flex-col gap-y-2">
+              <h3 className="text-dark font-bold text-lg leading-7">
+                Developer handoff
+              </h3>
+              <p className="text-dark font-medium text-base leading-6">
+                Invite developers to inspect and measure designs, then download
+                production-ready assets, all for free. They don’t need the Mac
+                app (or even a Mac) or third-party plugins. Just their favorite
+                browser. And you know they have a favorite.
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+            >
+              Try developer handoff now
               <Image
                 src="/accets/icons/arrow-right.svg"
                 alt="right-arrow"
