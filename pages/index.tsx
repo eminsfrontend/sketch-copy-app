@@ -11,13 +11,56 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>
-        
+      <Link href="/" className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-orange md:bg-opacity-60 shadow-extraLight">
+        <span className="text-dark font-bold text-xs flex items-center gap-x-1">Ready to create your best work?!
+          <Image
+            src="/accets/icons/arrow-right.svg"
+            alt="right-arrow"
+            width={24}
+            height={24}
+            className="opacity-30"
+         />
+        </span>
+      </Link>
+
+      <header className="bg-white md:bg-transparent fixed top-0 md:relative w-full z-50 bg-opacity-80 backdrop-blur-sm shadow-extraLight">
+        <nav className="container max-w-6xl mx-auto px-8 lg:px-4 py-5 flex justify-between items-center">
+          <div className="left-side flex gap-x-16 items-center">
+            <div className="">Logo</div>
+            {/* Navigation Desctop */}
+            <div className="flex gap-x-10 text-dark font-bold text-sm">
+              <Link href="/">Product</Link> 
+              <Link href="/">Learn</Link> 
+              <Link href="/">Apps</Link> 
+              <Link href="/">Pricing</Link> 
+            </div>
+          </div>
+          <div className="right-side flex">
+            Right Side
+            <div className="phone"></div>
+            <button className="call-to-action"></button>
+          </div>
+        </nav>
       </header>
 
       <main className="overflow-hidden">
+        {/* Title Area */}
+        <section className="container max-w-6xl mx-auto px-8 pt-24 min-h-[60vh]">
+          <div className="flex flex-col w-full md:w-2/3 gap-y-8">
+            <h1 className="text-dark font-black text-titleMobile leading-titleMobile md:text-titleTablet md:leading-titleTablet lg:text-titleDesctop lg:leading-titleDesctop">Everything you need to prototype</h1>
+            <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">Sketch gives you all the tools you need for a truly collaborative design process. From early ideas to pixel-perfect artwork, playable prototypes and developer handoff. It all starts here.</p>
+          </div>
+          <div className="flex gap-x-4 mt-8">
+            <button className="bg-black font-bold text-white text-base py-3 px-4 rounded-md">Get Started for Free</button>
+          </div>
+          
+        </section>
+
+        {/* Slider Area */}
+        {/* <section>Slider Area</section> */}
+
         {/* Area 1 */}
-        <div className="min-h-screen w-full  flex flex-col items-center relative px-4 lg:px-0 py-16">
+        <div className="min-h-screen w-full flex flex-col items-center relative px-4 lg:px-0 py-16">
           {/* Background paralax image */}
           <div className="absolute -z-10 ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[53%] lg:top-1/2 lg:-translate-y-1/2">
             <Image
