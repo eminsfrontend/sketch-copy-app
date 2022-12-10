@@ -11,34 +11,57 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Link href="/" className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-orange md:bg-opacity-60 shadow-extraLight">
-        <span className="text-dark font-bold text-xs flex items-center gap-x-1">Ready to create your best work?!
+      {/* Infoline Area */}
+      <Link
+        href="/"
+        className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-orange md:bg-opacity-60 shadow-extraLight"
+      >
+        <span className="text-dark font-bold text-xs flex items-center gap-x-1">
+          Ready to create your best work?!
           <Image
             src="/accets/icons/arrow-right.svg"
             alt="right-arrow"
             width={24}
             height={24}
             className="opacity-30"
-         />
+          />
         </span>
       </Link>
 
+      {/* Heared Area */}
       <header className="bg-white md:bg-transparent fixed top-0 md:relative w-full z-50 bg-opacity-80 backdrop-blur-sm shadow-extraLight">
-        <nav className="container max-w-6xl mx-auto px-8 lg:px-4 py-5 flex justify-between items-center">
+        <nav className="container max-w-6xl mx-auto px-8 lg:px-4 py-2 md:py-5 flex justify-between items-center">
           <div className="left-side flex gap-x-16 items-center">
-            <div className="">Logo</div>
+            <div className="">
+              <svg
+                width="30"
+                height="32"
+                viewBox="0 0 30 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M26.3522 5.46868L17.8953 0.684086C16.2759 -0.228028 13.7405 -0.228028 12.121 0.684086L3.58233 5.50069C0.196292 7.74097 0 8.07701 0 11.6455V20.3345C0 23.903 0.196292 24.255 3.64776 26.5273L12.1047 31.3119C12.9226 31.776 13.9695 32 15 32C16.0305 32 17.0774 31.776 17.879 31.3119L26.4177 26.4953C29.8037 24.255 30 23.919 30 20.3505V11.6455C30 8.07701 29.8037 7.74097 26.3522 5.46868V5.46868ZM15 21.1987C12.072 21.1987 9.68375 18.8624 9.68375 15.998C9.68375 13.1336 12.072 10.7974 15 10.7974C17.928 10.7974 20.3162 13.1336 20.3162 15.998C20.3162 18.8624 17.928 21.1987 15 21.1987Z"
+                  fill="#212123"
+                />
+              </svg>
+            </div>
             {/* Navigation Desctop */}
-            <div className="flex gap-x-10 text-dark font-bold text-sm">
-              <Link href="/">Product</Link> 
-              <Link href="/">Learn</Link> 
-              <Link href="/">Apps</Link> 
-              <Link href="/">Pricing</Link> 
+            <div className="hidden md:flex gap-x-10 text-dark font-bold text-sm">
+              <Link href="/">Product</Link>
+              <Link href="/">Learn</Link>
+              <Link href="/">Apps</Link>
+              <Link href="/">Pricing</Link>
             </div>
           </div>
-          <div className="right-side flex">
-            Right Side
-            <div className="phone"></div>
-            <button className="call-to-action"></button>
+          <div className="flex items-center gap-x-8">
+            <div className="hidden md:block after:content-['|'] after:text-dark after:opacity-30 after:ml-6 after:font-bold">
+              Right Side
+            </div>
+            {/* Create Button With fontSize options */}
+            <button className="md:bg-black font-bold text-dark md:text-white underline md:no-underline text-sm py-4 md:py-3 md:px-3 md:rounded-md underline-offset-4">
+              Get Started for Free
+            </button>
           </div>
         </nav>
       </header>
@@ -47,13 +70,20 @@ export default function Home() {
         {/* Title Area */}
         <section className="container max-w-6xl mx-auto px-8 pt-24 min-h-[60vh]">
           <div className="flex flex-col w-full md:w-2/3 gap-y-8">
-            <h1 className="text-dark font-black text-titleMobile leading-titleMobile md:text-titleTablet md:leading-titleTablet lg:text-titleDesctop lg:leading-titleDesctop">Everything you need to prototype</h1>
-            <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">Sketch gives you all the tools you need for a truly collaborative design process. From early ideas to pixel-perfect artwork, playable prototypes and developer handoff. It all starts here.</p>
+            <h1 className="text-dark font-black text-titleMobile leading-titleMobile md:text-titleTablet md:leading-titleTablet lg:text-titleDesctop lg:leading-titleDesctop">
+              Everything you need to prototype
+            </h1>
+            <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">
+              Sketch gives you all the tools you need for a truly collaborative
+              design process. From early ideas to pixel-perfect artwork,
+              playable prototypes and developer handoff. It all starts here.
+            </p>
           </div>
           <div className="flex gap-x-4 mt-8">
-            <button className="bg-black font-bold text-white text-base py-3 px-4 rounded-md">Get Started for Free</button>
+            <button className="bg-black font-bold text-white text-base py-3 px-4 rounded-md">
+              Get Started for Free
+            </button>
           </div>
-          
         </section>
 
         {/* Slider Area */}
@@ -139,7 +169,7 @@ export default function Home() {
         </div>
 
         {/* Area 2 */}
-        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:pag-y-0 lg:gap-x-20 md:px-32 lg:px-0">
+        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:gap-y-0 lg:gap-x-20 md:px-32 lg:px-0">
           <div className="flex flex-col gap-y-8 px-5 lg:px-0">
             {/* Image - create image component with option items-(center, end, start) */}
             <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-end">
@@ -370,6 +400,213 @@ export default function Home() {
             </Link>
           </div>
         </div>
+
+        {/* Grid Area */}
+        <section className="container max-w-6xl mx-auto my-48 flex flex-col gap-y-16">
+          <div className="flex flex-col gap-y-6 px-4 md:px-32 lg:px-0">
+            <h3 className="text-dark font-black text-center text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
+              Больше преимуществ
+            </h3>
+            <p className="text-dark font-medium text-center text-base leading-6 md:text-lg md:leading-7">
+              We’re always shipping new updates to Sketch. Here’s a selection of
+              our latest features for you to explore.
+            </p>
+          </div>
+          <div className="my-grid">
+            <div className="c1 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
+              <Image
+                src="/accets/icons/duplicate.document.32.svg"
+                alt="icon12"
+                width={48}
+                height={48}
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
+                  Some link Info
+                </div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-0 xl:mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c2 rounded-2xl bg-black bg-opacity-[3%] flex flex-col justify-end pb-6 items-center relative overflow-hidden">
+              <Image
+                src="/accets/images/prototype-overlays-2@4x.avif"
+                alt="icon12"
+                width={494}
+                height={312}
+                className="absolute top-0 left-0 w-full"
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-6">Some link Info</div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c3 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
+              <Image
+                src="/accets/icons/css.32.svg"
+                alt="icon12"
+                width={48}
+                height={48}
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
+                  Some link Info
+                </div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-0 xl:mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c4 rounded-2xl bg-black bg-opacity-[3%] flex flex-col justify-end pb-6 items-center relative overflow-hidden">
+              <Image
+                src="/accets/images/sketch-for-iphone@4x.avif"
+                alt="icon12"
+                width={1114}
+                height={778}
+                className="absolute top-0 left-0 w-full"
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-6">4 link</div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c5 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
+              <Image
+                src="/accets/icons/swatch.32.svg"
+                alt="icon12"
+                width={48}
+                height={48}
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
+                  Some link Info
+                </div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-0 xl:mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c6 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
+              <Image
+                src="/accets/icons/overrides.32.svg"
+                alt="icon12"
+                width={48}
+                height={48}
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
+                  Some link Info
+                </div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-0 xl:mt-6"
+                />
+              </Link>
+            </div>
+            <div className="c7 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
+              <Image
+                src="/accets/icons/artboard.template.32.svg"
+                alt="icon12"
+                width={48}
+                height={48}
+              />
+              <Link
+                href="/"
+                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+              >
+                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
+                  Some link Info
+                </div>
+                <Image
+                  src="/accets/icons/arrow-right.svg"
+                  alt="right-arrow"
+                  width={24}
+                  height={24}
+                  className="opacity-30 mt-0 xl:mt-6"
+                />
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Short Info Section with Label */}
+        <section className="container max-w-6xl mx-auto flex flex-col gap-y-16">
+          <div className="flex flex-col gap-y-6 items-center">
+            <div className="bg-black py-1 px-3 rounded-md bg-opacity-[5%] text-dark font-semibold text-xs uppercase tracking-wide">
+              Extensions
+            </div>
+            <div className="flex flex-col gap-y-6 px-4 md:px-32 xl:px-64 lg:px-0">
+              <h2 className="text-dark font-black text-center text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
+                Больше преимуществ в нашем подходе
+              </h2>
+              <p className="text-dark font-medium text-center text-base leading-6 md:text-lg md:leading-7">
+                Choose from hundreds of plugins, Assistants and integrations
+                that let you do everything from animating interactions to making
+                your designs more accessible.
+              </p>
+            </div>
+            <Link
+              href="/"
+              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
+            >
+              Explore your design toolkit
+              <Image
+                src="/accets/icons/arrow-right.svg"
+                alt="right-arrow"
+                width={24}
+                height={24}
+                className="opacity-30"
+              />
+            </Link>
+          </div>
+        </section>
+        
       </main>
     </>
   )
