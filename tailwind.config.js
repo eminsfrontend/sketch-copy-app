@@ -15,7 +15,8 @@ module.exports = {
       white: "#FFFFFF",
       dark: "#212123",
       orange: "#FFB387",
-      transparent: "transparent"
+      transparent: "transparent",
+      green: "#BBD975",
     },
     extend: {
       fontSize: {

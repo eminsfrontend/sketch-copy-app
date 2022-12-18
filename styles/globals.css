@@ -4,6 +4,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom Gradients */
+
+.green-round {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #bdbc4a 0%,
+    #c3bf42 52.08%,
+    #a0c829 100%
+  );
+}
+
 /* Custom Grid */
 .my-grid {
   display: grid;

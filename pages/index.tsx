@@ -1,6 +1,8 @@
-import Head from "next/head"
-import Image from "next/image"
-import Link from "next/link"
+import Head from "next/head";
+import Image from "next/image";
+import Link from "next/link";
+import { Button, TitleArea, BigImageLayout } from "../components";
+import { bigImageLayoutDirectionType } from "../components/layoutComponent/bigImageLayout";
 
 export default function Home() {
   return (
@@ -69,104 +71,38 @@ export default function Home() {
       <main className="overflow-hidden">
         {/* Title Area */}
         <section className="container max-w-6xl mx-auto px-8 pt-24 min-h-[60vh]">
-          <div className="flex flex-col w-full md:w-2/3 gap-y-8">
-            <h1 className="text-dark font-black text-titleMobile leading-titleMobile md:text-titleTablet md:leading-titleTablet lg:text-titleDesctop lg:leading-titleDesctop">
-              Everything you need to prototype
-            </h1>
-            <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">
-              Sketch gives you all the tools you need for a truly collaborative
-              design process. From early ideas to pixel-perfect artwork,
-              playable prototypes and developer handoff. It all starts here.
-            </p>
-          </div>
-          <div className="flex gap-x-4 mt-8">
-            <button className="bg-black font-bold text-white text-base py-3 px-4 rounded-md">
-              Get Started for Free
-            </button>
-          </div>
+          <TitleArea
+            title="Everything you need to prototype"
+            description="Sketch gives you all the tools you need for a truly collaborative design process. From early ideas to pixel-perfect artwork, playable prototypes and developer handoff. It all starts here."
+          />
+          <Button title="Get Started for Free" />
         </section>
 
         {/* Slider Area */}
         {/* <section>Slider Area</section> */}
 
         {/* Area 1 */}
-        <div className="min-h-screen w-full flex flex-col items-center relative px-4 lg:px-0 py-16">
-          {/* Background paralax image */}
-          <div className="absolute -z-10 ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[53%] lg:top-1/2 lg:-translate-y-1/2">
-            <Image
-              src="/accets/images/eye-bg.svg"
-              alt="bg-image"
-              width={2040}
-              height={1150}
-              loading="lazy"
-            />
-          </div>
-          <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
-            {/* Image/video container */}
-            <div className="overflow-hidden lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-left-[30%] lg:w-3/4 h-[90%] md:max-h-[590px] xl:max-h-[90%] rounded-xl shadow-light border border-black border-opacity-10">
-              <video
-                src="/accets/videos/real-time-collab-visual-v90.mp4"
-                autoPlay
-                loop
-                muted
-              ></video>
-            </div>
-            {/* Info container */}
-            <div className="container max-w-6xl mx-auto flex justify-between lg:gap-x-20">
-              <div className="lg:flex-1" />
-              <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
-                <div className="flex flex-col gap-y-6 px-5 lg:px-0">
-                  <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
-                    The all-in-one designer’s toolkit
-                  </h2>
-                  <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
-                    More than just UI design tools – if you’re collaborating on
-                    new concepts, building beautiful prototypes or crafting the
-                    perfect app icon, we’ve got your whole design process
-                    covered.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-y-8">
-                  <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
-                    <Image
-                      src="/accets/images/native@2x.avif"
-                      alt="image1"
-                      width={524}
-                      height={216}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-y-6 px-5 lg:px-0">
-                    <div className="flex flex-col gap-y-2">
-                      <h3 className="text-dark font-bold text-lg leading-7">
-                        Native macOS editor
-                      </h3>
-                      <p className="text-dark font-medium text-base leading-6">
-                        Create your best work with an intuitive UI, thoughtful
-                        features and all the benefits you’d expect from a great
-                        Mac app (like support for P3 color profiles, native font
-                        rendering, and super-fast Apple Silicon performance).
-                      </p>
-                    </div>
-                    <Link
-                      href="/"
-                      className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-                    >
-                      Explore your design toolkit
-                      <Image
-                        src="/accets/icons/arrow-right.svg"
-                        alt="right-arrow"
-                        width={24}
-                        height={24}
-                        className="opacity-30"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        {/* Area 1 */}
+        <BigImageLayout
+          imageDirection={bigImageLayoutDirectionType.leading}
+          bgImage="eye-bg"
+          bgImageAlt="eye-background"
+          bgImageWidth={2040}
+          bgImageHeight={1150}
+          mainImageOrVideo="real-time-collab-visual-v90"
+          title="The all-in-one designer’s toolkit"
+          description="More than just UI design tools – if you’re collaborating on new concepts, building beautiful prototypes or crafting the perfect app icon, we’ve got your whole design process covered."
+          secondaryImage="native@2x"
+          secondaryImageAlt="secondary-image"
+          secondaryTitle="Native macOS editor"
+          secondaryDescription="Create your best work with an intuitive UI, thoughtful
+          features and all the benefits you’d expect from a great
+          Mac app (like support for P3 color profiles, native font
+          rendering, and super-fast Apple Silicon performance)."
+          linkTo="/"
+          linkTitle="Explore your design toolkit"
+        />
 
         {/* Area 2 */}
         <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:gap-y-0 lg:gap-x-20 md:px-32 lg:px-0">
@@ -245,84 +181,29 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Area 3 */}
-        <div className="min-h-screen w-full  flex flex-col items-center relative px-4 lg:px-0 py-16">
-          {/* Background paralax image */}
-          <div className="absolute mr-6 lg:mr-0 -left-1/2 lg:left-[50%] lg:-right-[53%] lg:top-1/2 lg:-translate-y-1/2">
-            <Image
-              src="/accets/images/rectangular-shape-bg.svg"
-              alt="bg-image"
-              width={773}
-              height={773}
-              loading="lazy"
-            />
-          </div>
-          <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
-            {/* Image/video container */}
-            <div className="overflow-hidden lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:-right-[30%] lg:w-3/4 h-[90%] md:max-h-[590px] xl:max-h-[90%] rounded-xl shadow-light border border-black border-opacity-10">
-              <video
-                src="/accets/videos/handoff-visual-2.mp4"
-                autoPlay
-                loop
-                muted
-              ></video>
-            </div>
-            {/* Info container */}
-            <div className="container max-w-6xl mx-auto flex flex-row-reverse justify-between lg:gap-x-20">
-              <div className="lg:flex-1" />
-              <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
-                <div className="flex flex-col gap-y-6 px-5 lg:px-0">
-                  <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
-                    Scale up your design process
-                  </h2>
-                  <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
-                    Bring your projects and people together, share feedback,
-                    hand off to developers, and build out beautiful design
-                    systems — all in one place.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-y-8">
-                  <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
-                    <Image
-                      src="/accets/images/workspaces@2x.avif"
-                      alt="image1"
-                      width={524}
-                      height={216}
-                      loading="lazy"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-y-6 px-5 lg:px-0">
-                    <div className="flex flex-col gap-y-2">
-                      <h3 className="text-dark font-bold text-lg leading-7">
-                        Workspaces
-                      </h3>
-                      <p className="text-dark font-medium text-base leading-6">
-                        With a Sketch Workspace, you get a home for storing
-                        files, sharing ideas, getting feedback, managing your
-                        team, distributing Libraries, handing off to developers
-                        and exploring your Design System. It’s all included in
-                        your subscription.
-                      </p>
-                    </div>
-                    <Link
-                      href="/"
-                      className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-                    >
-                      See what a Workspace can do
-                      <Image
-                        src="/accets/icons/arrow-right.svg"
-                        alt="right-arrow"
-                        width={24}
-                        height={24}
-                        className="opacity-30"
-                      />
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* ------------------ Area 3 ------------------ */}
+        <BigImageLayout
+          imageDirection={bigImageLayoutDirectionType.trailing}
+          bgImage="rectangular-shape-bg"
+          bgImageAlt="rect-bg"
+          bgImageWidth={773}
+          bgImageHeight={773}
+          mainImageOrVideo="handoff-visual-2"
+          title="Scale up your design process"
+          description="Bring your projects and people together, share feedback,
+          hand off to developers, and build out beautiful design
+          systems — all in one place."
+          secondaryImage="workspaces@2x"
+          secondaryImageAlt="workspace-alt"
+          secondaryTitle="Workspaces"
+          secondaryDescription="With a Sketch Workspace, you get a home for storing
+          files, sharing ideas, getting feedback, managing your
+          team, distributing Libraries, handing off to developers
+          and exploring your Design System. It’s all included in
+          your subscription."
+          linkTo="/"
+          linkTitle="See what a Workspace can do"
+        />
 
         {/* Area 4 */}
         <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:pag-y-0 lg:gap-x-20 md:px-32 lg:px-0">
@@ -576,7 +457,7 @@ export default function Home() {
         </section>
 
         {/* Short Info Section with Label */}
-        <section className="container max-w-6xl mx-auto flex flex-col gap-y-16">
+        <section className="container max-w-6xl mx-auto flex flex-col gap-y-16 mb-24">
           <div className="flex flex-col gap-y-6 items-center">
             <div className="bg-black py-1 px-3 rounded-md bg-opacity-[5%] text-dark font-semibold text-xs uppercase tracking-wide">
               Extensions
@@ -606,8 +487,92 @@ export default function Home() {
             </Link>
           </div>
         </section>
-        
+
+        {/* Form Area */}
+        <section className="bg-black bg-opacity-[3%] py-16 border-t border-black border-opacity-[15%]">
+          <div className="container max-w-6xl mx-auto flex flex-col-reverse lg:flex-row-reverse justify-between lg:items-center lg:gap-x-20">
+            <div className="lg:flex-1 py-10 px-4 md:px-32 lg:px-0 lg:border-l lg:border-black lg:border-opacity-[15%]">
+              <div className="flex flex-col gap-y-6">
+                <div className="flex items-center gap-x-6 lg:px-11 pb-6 border-b border-black border-opacity-[15%]">
+                  <Image
+                    src="/accets/images/sketch-proud-to-be-independent-2022.avif"
+                    alt="some-image"
+                    width={64}
+                    height={64}
+                    className="rounded-md"
+                  />
+                  <p className="text-dark font-medium text-base leading-6">
+                    Inside Sketch: Long time no see? Discover the new Sketch
+                  </p>
+                </div>
+                <div className="flex items-center gap-x-6 lg:px-11 pb-6 border-b border-black border-opacity-[15%]">
+                  <Image
+                    src="/accets/images/sketch-proud-to-be-independent-2022.avif"
+                    alt="some-image"
+                    width={64}
+                    height={64}
+                    className="rounded-md"
+                  />
+                  <p className="text-dark font-medium text-base leading-6">
+                    Inside Sketch: Long time no see? Discover the new Sketch
+                  </p>
+                </div>
+                <div className="flex items-center gap-x-6 lg:px-11 pb-6 last:border-none last:pb-0 border-b border-black border-opacity-[15%]">
+                  <Image
+                    src="/accets/images/sketch-proud-to-be-independent-2022.avif"
+                    alt="some-image"
+                    width={64}
+                    height={64}
+                    className="rounded-md"
+                  />
+                  <p className="text-dark font-medium text-base leading-6">
+                    Inside Sketch: Long time no see? Discover the new Sketch
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
+              <div className="flex flex-col gap-y-6 px-5 md:px-0">
+                <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
+                  Our blog
+                </h2>
+                <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
+                  The latest news, greatest tutorials and inspiration that’ll
+                  make you say “I wish I’d done that!” From incredible things
+                  you can make with Sketch, to insights from the people who make
+                  Sketch happen.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/* Form Area */}
+          <div className="max-w-6xl mx-auto px-4 lg:px-0 my-10 min-h-[50vh] md:min-h-[40vh] lg:min-h-[70vh] lg:h-[70vh]">
+            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-green h-full py-12">
+              {/* Round Background */}
+              <div className="green-round absolute -bottom-[150px] -left-[100px] md:-bottom-[350px] md:-left-[200px] lg:-bottom-[500px] lg:-left-[200px] w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[1000px] lg:h-[1000px] rounded-full"></div>
+              {/* Form */}
+              <div className="w-full px-10 md:px-24 lg:px-64 z-40 flex flex-col gap-y-6">
+                <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
+                  Create your Workspace for free
+                </h2>
+                <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">
+                  Whether you're new to Sketch, or back to see what’s new, we’ll
+                  have you set up and ready to do your best work in minutes.
+                </p>
+                <form className="flex flex-col md:flex-row gap-y-4 gap-x-4">
+                  <input
+                    placeholder="Введите номер телефона"
+                    className="flex-3 px-4 py-3 w-full md:max-w-[300px] lg:max-w-[400px] rounded-md"
+                  />
+                  <button className="flex-1 bg-black font-bold text-white text-base py-3 px-4 rounded-md">
+                    Отправить запрос
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
-  )
+  );
 }
