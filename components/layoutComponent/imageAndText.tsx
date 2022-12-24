@@ -2,9 +2,15 @@ import Image from "next/image";
 import CustomLink from "../singleComponent/customLink";
 import TextInfo from "../singleComponent/textInfo";
 
+export enum ImagePositionOnBackground {
+  center,
+  end,
+}
+
 interface ImageAndTextProps {
   secondaryImage: string;
   secondaryImageAlt?: string;
+  secondaryImagePosition?: ImagePositionOnBackground;
   secondaryTitle: string;
   secondaryDescription: string;
   linkTo: string;
@@ -14,6 +20,7 @@ interface ImageAndTextProps {
 export default function ImageAndText({
   secondaryImage,
   secondaryImageAlt,
+  secondaryImagePosition,
   secondaryTitle,
   secondaryDescription,
   linkTo,
@@ -22,7 +29,11 @@ export default function ImageAndText({
   return (
     <div className="flex flex-col gap-y-8">
       {/* Secondary Image */}
-      <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
+      <div
+        className={`relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex ${
+          secondaryImagePosition ? "items-end" : "items-center"
+        }`}
+      >
         <Image
           src={`/accets/images/${secondaryImage}.avif`}
           alt={secondaryImageAlt || secondaryTitle}

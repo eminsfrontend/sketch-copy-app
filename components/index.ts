@@ -4,3 +4,4 @@ export { default as BigImageLayout } from "./layoutComponent/bigImageLayout";
 export { default as TextInfo } from "./singleComponent/textInfo";
 export { default as CustomLink } from "./singleComponent/customLink";
 export { default as ImageAndText } from "./layoutComponent/imageAndText";
+export { default as ImageTextGrid } from "./layoutComponent/imageTextGrid";

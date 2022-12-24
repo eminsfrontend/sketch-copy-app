@@ -1,8 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { Button, TitleArea, BigImageLayout } from "../components";
+import {
+  Button,
+  TitleArea,
+  BigImageLayout,
+  ImageTextGrid,
+  ImageAndText,
+} from "../components";
 import { bigImageLayoutDirectionType } from "../components/layoutComponent/bigImageLayout";
+import { ImagePositionOnBackground } from "../components/layoutComponent/imageAndText";
 
 export default function Home() {
   return (
@@ -16,16 +23,16 @@ export default function Home() {
       {/* Infoline Area */}
       <Link
         href="/"
-        className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-orange md:bg-opacity-60 shadow-extraLight"
+        className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-vivaMagenta shadow-extraLight"
       >
-        <span className="text-dark font-bold text-xs flex items-center gap-x-1">
+        <span className="text-dark font-bold text-xs flex items-center gap-x-1 md:text-white">
           Ready to create your best work?!
           <Image
             src="/accets/icons/arrow-right.svg"
             alt="right-arrow"
             width={24}
             height={24}
-            className="opacity-30"
+            className="opacity-30 md:opacity-80"
           />
         </span>
       </Link>
@@ -78,12 +85,9 @@ export default function Home() {
           <Button title="Get Started for Free" />
         </section>
 
-        {/* Slider Area */}
-        {/* <section>Slider Area</section> */}
+        {/* ------------------------------------ Slider Area (Not ready) ------------------------------------ */}
 
-        {/* Area 1 */}
-
-        {/* Area 1 */}
+        {/* ------------------------------------ Area 1 ------------------------------------ */}
         <BigImageLayout
           imageDirection={bigImageLayoutDirectionType.leading}
           bgImage="eye-bg"
@@ -104,84 +108,38 @@ export default function Home() {
           linkTitle="Explore your design toolkit"
         />
 
-        {/* Area 2 */}
-        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:gap-y-0 lg:gap-x-20 md:px-32 lg:px-0">
-          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
-            {/* Image - create image component with option items-(center, end, start) */}
-            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-end">
-              <Image
-                src="/accets/images/prototyping@2x.avif"
-                alt="prototype"
-                width={524}
-                height={216}
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <h3 className="text-dark font-bold text-lg leading-7">
-                Prototyping
-              </h3>
-              <p className="text-dark font-medium text-base leading-6">
-                Bring your designs to life with easy-to-use tools. Test
-                prototypes on your devices. Or share a link with others so they
-                can try them out in any browser and give their feedback, for
-                free. With no plugins required.
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-            >
-              Discover Prototyping in Sketch
-              <Image
-                src="/accets/icons/arrow-right.svg"
-                alt="right-arrow"
-                width={24}
-                height={24}
-                className="opacity-30"
-              />
-            </Link>
-          </div>
+        {/* ------------------------------------ Area 2 ------------------------------------ */}
+        <ImageTextGrid
+          leftArea={
+            <ImageAndText
+              secondaryImage="prototyping@2x"
+              secondaryImageAlt="text-title-1"
+              secondaryImagePosition={ImagePositionOnBackground.end}
+              secondaryTitle="Prototyping"
+              secondaryDescription="Bring your designs to life with easy-to-use tools. Test
+              prototypes on your devices. Or share a link with others so they
+              can try them out in any browser and give their feedback, for
+              free. With no plugins required."
+              linkTitle="Discover Prototyping in Sketch"
+              linkTo="/"
+            />
+          }
+          rightArea={
+            <ImageAndText
+              secondaryImage="collaboration@2x"
+              secondaryImageAlt="text-title-2"
+              secondaryTitle="Real-time collaboration"
+              secondaryDescription="Work together in the same document, at the same time — right
+              inside the Mac app. No hassle, no save conflicts, no pinging
+              files back and forth. Just you, your collaborators, and an
+              infinite Canvas to explore."
+              linkTitle="See collaboration in action"
+              linkTo="/"
+            />
+          }
+        />
 
-          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
-            {/* Image - create image component with option items-(center, end, start) */}
-            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
-              <Image
-                src="/accets/images/collaboration@2x.avif"
-                alt="prototype"
-                width={524}
-                height={216}
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <h3 className="text-dark font-bold text-lg leading-7">
-                Real-time collaboration
-              </h3>
-              <p className="text-dark font-medium text-base leading-6">
-                Work together in the same document, at the same time — right
-                inside the Mac app. No hassle, no save conflicts, no pinging
-                files back and forth. Just you, your collaborators, and an
-                infinite Canvas to explore.
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-            >
-              See collaboration in action
-              <Image
-                src="/accets/icons/arrow-right.svg"
-                alt="right-arrow"
-                width={24}
-                height={24}
-                className="opacity-30"
-              />
-            </Link>
-          </div>
-        </div>
-
-        {/* ------------------ Area 3 ------------------ */}
+        {/* ------------------------------------ Area 3 ------------------------------------ */}
         <BigImageLayout
           imageDirection={bigImageLayoutDirectionType.trailing}
           bgImage="rectangular-shape-bg"
@@ -205,82 +163,36 @@ export default function Home() {
           linkTitle="See what a Workspace can do"
         />
 
-        {/* Area 4 */}
-        <div className="container max-w-6xl mx-auto flex flex-col lg:flex-row justify-between gap-y-16 lg:pag-y-0 lg:gap-x-20 md:px-32 lg:px-0">
-          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
-            {/* Image - create image component with option items-(center, end, start) */}
-            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
-              <Image
-                src="/accets/images/design-systems@2x.avif"
-                alt="prototype"
-                width={524}
-                height={216}
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <h3 className="text-dark font-bold text-lg leading-7">
-                Design systems
-              </h3>
-              <p className="text-dark font-medium text-base leading-6">
-                Build out your design systems with reusable Styles and
-                responsive Symbols. Manage them effortlessly on the Mac app or
-                in the browser, share them with your team and update them
-                everywhere in seconds.
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-            >
-              Discover design systems
-              <Image
-                src="/accets/icons/arrow-right.svg"
-                alt="right-arrow"
-                width={24}
-                height={24}
-                className="opacity-30"
-              />
-            </Link>
-          </div>
-
-          <div className="flex flex-col gap-y-8 px-5 lg:px-0">
-            {/* Image - create image component with option items-(center, end, start) */}
-            <div className="relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex items-center">
-              <Image
-                src="/accets/images/handoff@2x.avif"
-                alt="prototype"
-                width={524}
-                height={216}
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-col gap-y-2">
-              <h3 className="text-dark font-bold text-lg leading-7">
-                Developer handoff
-              </h3>
-              <p className="text-dark font-medium text-base leading-6">
-                Invite developers to inspect and measure designs, then download
-                production-ready assets, all for free. They don’t need the Mac
-                app (or even a Mac) or third-party plugins. Just their favorite
-                browser. And you know they have a favorite.
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-            >
-              Try developer handoff now
-              <Image
-                src="/accets/icons/arrow-right.svg"
-                alt="right-arrow"
-                width={24}
-                height={24}
-                className="opacity-30"
-              />
-            </Link>
-          </div>
-        </div>
+        {/* ------------------------------------ Area 4 ------------------------------------ */}
+        <ImageTextGrid
+          leftArea={
+            <ImageAndText
+              secondaryImage="design-systems@2x"
+              secondaryImageAlt="text-title-3"
+              secondaryImagePosition={ImagePositionOnBackground.end}
+              secondaryTitle="Design systems"
+              secondaryDescription="Build out your design systems with reusable Styles and
+              responsive Symbols. Manage them effortlessly on the Mac app or
+              in the browser, share them with your team and update them
+              everywhere in seconds."
+              linkTitle="Discover design systems"
+              linkTo="/"
+            />
+          }
+          rightArea={
+            <ImageAndText
+              secondaryImage="collaboration@2x"
+              secondaryImageAlt="text-title-2"
+              secondaryTitle="Developer handoff"
+              secondaryDescription="Invite developers to inspect and measure designs, then download
+              production-ready assets, all for free. They don’t need the Mac
+              app (or even a Mac) or third-party plugins. Just their favorite
+              browser. And you know they have a favorite."
+              linkTitle="Try developer handoff now"
+              linkTo="/"
+            />
+          }
+        />
 
         {/* Grid Area */}
         <section className="container max-w-6xl mx-auto my-48 flex flex-col gap-y-16">

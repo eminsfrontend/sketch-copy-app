@@ -14,7 +14,7 @@ module.exports = {
       black: "#000000",
       white: "#FFFFFF",
       dark: "#212123",
-      orange: "#FFB387",
+      vivaMagenta: "#be3455",
       transparent: "transparent",
       green: "#BBD975",
     },
