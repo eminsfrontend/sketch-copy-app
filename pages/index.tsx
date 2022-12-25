@@ -7,6 +7,8 @@ import {
   BigImageLayout,
   ImageTextGrid,
   ImageAndText,
+  LabeledArea,
+  FormArea,
 } from "../components";
 import { bigImageLayoutDirectionType } from "../components/layoutComponent/bigImageLayout";
 import { ImagePositionOnBackground } from "../components/layoutComponent/imageAndText";
@@ -28,11 +30,10 @@ export default function Home() {
         <span className="text-dark font-bold text-xs flex items-center gap-x-1 md:text-white">
           Ready to create your best work?!
           <Image
-            src="/accets/icons/arrow-right.svg"
+            src="/accets/icons/arrow-right-white.svg"
             alt="right-arrow"
             width={24}
             height={24}
-            className="opacity-30 md:opacity-80"
           />
         </span>
       </Link>
@@ -169,7 +170,7 @@ export default function Home() {
             <ImageAndText
               secondaryImage="design-systems@2x"
               secondaryImageAlt="text-title-3"
-              secondaryImagePosition={ImagePositionOnBackground.end}
+              secondaryImagePosition={ImagePositionOnBackground.center}
               secondaryTitle="Design systems"
               secondaryDescription="Build out your design systems with reusable Styles and
               responsive Symbols. Manage them effortlessly on the Mac app or
@@ -205,6 +206,7 @@ export default function Home() {
               our latest features for you to explore.
             </p>
           </div>
+          {/* Grid */}
           <div className="my-grid">
             <div className="c1 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
               <Image
@@ -369,40 +371,20 @@ export default function Home() {
         </section>
 
         {/* Short Info Section with Label */}
-        <section className="container max-w-6xl mx-auto flex flex-col gap-y-16 mb-24">
-          <div className="flex flex-col gap-y-6 items-center">
-            <div className="bg-black py-1 px-3 rounded-md bg-opacity-[5%] text-dark font-semibold text-xs uppercase tracking-wide">
-              Extensions
-            </div>
-            <div className="flex flex-col gap-y-6 px-4 md:px-32 xl:px-64 lg:px-0">
-              <h2 className="text-dark font-black text-center text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
-                Больше преимуществ в нашем подходе
-              </h2>
-              <p className="text-dark font-medium text-center text-base leading-6 md:text-lg md:leading-7">
-                Choose from hundreds of plugins, Assistants and integrations
-                that let you do everything from animating interactions to making
-                your designs more accessible.
-              </p>
-            </div>
-            <Link
-              href="/"
-              className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-            >
-              Explore your design toolkit
-              <Image
-                src="/accets/icons/arrow-right.svg"
-                alt="right-arrow"
-                width={24}
-                height={24}
-                className="opacity-30"
-              />
-            </Link>
-          </div>
-        </section>
+        <LabeledArea
+          labelTitle="Extensions"
+          title="Больше преимуществ в нашем подходе"
+          description="Choose from hundreds of plugins, Assistants and integrations
+          that let you do everything from animating interactions to making
+          your designs more accessible."
+          haslink={true}
+          linkTo="/"
+          linkTitle="Explore your design toolkit"
+        />
 
         {/* Form Area */}
-        <section className="bg-black bg-opacity-[3%] py-16 border-t border-black border-opacity-[15%]">
-          <div className="container max-w-6xl mx-auto flex flex-col-reverse lg:flex-row-reverse justify-between lg:items-center lg:gap-x-20">
+        <section className="bg-black bg-opacity-[3%] py-16 mt-24 border-t border-black border-opacity-[15%]">
+          <div className="container max-w-6xl mx-auto mb-32 flex flex-col-reverse lg:flex-row-reverse justify-between lg:items-center lg:gap-x-20">
             <div className="lg:flex-1 py-10 px-4 md:px-32 lg:px-0 lg:border-l lg:border-black lg:border-opacity-[15%]">
               <div className="flex flex-col gap-y-6">
                 <div className="flex items-center gap-x-6 lg:px-11 pb-6 border-b border-black border-opacity-[15%]">
@@ -457,31 +439,30 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {/* Form Area */}
-          <div className="max-w-6xl mx-auto px-4 lg:px-0 my-10 min-h-[50vh] md:min-h-[40vh] lg:min-h-[70vh] lg:h-[70vh]">
-            <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl bg-green h-full py-12">
-              {/* Round Background */}
-              <div className="green-round absolute -bottom-[150px] -left-[100px] md:-bottom-[350px] md:-left-[200px] lg:-bottom-[500px] lg:-left-[200px] w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[1000px] lg:h-[1000px] rounded-full"></div>
-              {/* Form */}
-              <div className="w-full px-10 md:px-24 lg:px-64 z-40 flex flex-col gap-y-6">
-                <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
-                  Create your Workspace for free
-                </h2>
-                <p className="text-dark font-medium text-base leading-6 md:text-paragraphTitle md:leading-paragraphTitle">
-                  Whether you're new to Sketch, or back to see what’s new, we’ll
-                  have you set up and ready to do your best work in minutes.
-                </p>
-                <form className="flex flex-col md:flex-row gap-y-4 gap-x-4">
-                  <input
-                    placeholder="Введите номер телефона"
-                    className="flex-3 px-4 py-3 w-full md:max-w-[300px] lg:max-w-[400px] rounded-md"
-                  />
-                  <button className="flex-1 bg-black font-bold text-white text-base py-3 px-4 rounded-md">
-                    Отправить запрос
-                  </button>
-                </form>
-              </div>
-            </div>
+          <LabeledArea
+            labelTitle="Extensions"
+            title="Больше преимуществ в нашем подходе"
+            description="Choose from hundreds of plugins, Assistants and integrations
+          that let you do everything from animating interactions to making
+          your designs more accessible."
+            haslink={false}
+            linkTo="/"
+            linkTitle="Explore your design toolkit"
+          />
+          <div className="container max-w-6xl mx-auto flex flex-col gap-y-16 mb-24 px-4 md:px-32 xl:px-64 lg:px-0">
+            <form className="flex flex-col md:flex-row gap-y-4 gap-x-4 mt-8">
+              <input
+                type="tel"
+                placeholder="Введите номер телефона"
+                className="flex-3 px-4 py-3 w-full md:max-w-[300px] lg:max-w-[400px] rounded-md"
+              />
+              <button
+                type="submit"
+                className="flex-1 bg-black font-bold text-white text-base py-3 px-4 rounded-md"
+              >
+                Отправить запрос
+              </button>
+            </form>
           </div>
         </section>
       </main>
