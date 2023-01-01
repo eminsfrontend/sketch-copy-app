@@ -1,12 +1,12 @@
-import CustomLink from "../singleComponent/customLink";
+import CustomLink from "../singleComponent/customLink"
 
 interface LabeledAreaProps {
-  labelTitle: string;
-  title: string;
-  description: string;
-  haslink: boolean;
-  linkTo?: string;
-  linkTitle?: string;
+  labelTitle: string
+  title: string
+  description: string
+  haslink: boolean
+  linkTo?: string
+  linkTitle?: string
 }
 
 export default function LabeledArea({
@@ -36,5 +36,5 @@ export default function LabeledArea({
         ) : null}
       </div>
     </section>
-  );
+  )
 }

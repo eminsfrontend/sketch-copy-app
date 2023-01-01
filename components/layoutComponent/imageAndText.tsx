@@ -1,6 +1,6 @@
-import Image from "next/image";
-import CustomLink from "../singleComponent/customLink";
-import TextInfo from "../singleComponent/textInfo";
+import Image from "next/image"
+import CustomLink from "../singleComponent/customLink"
+import TextInfo from "../singleComponent/textInfo"
 
 export enum ImagePositionOnBackground {
   center,
@@ -8,13 +8,13 @@ export enum ImagePositionOnBackground {
 }
 
 interface ImageAndTextProps {
-  secondaryImage: string;
-  secondaryImageAlt?: string;
-  secondaryImagePosition?: ImagePositionOnBackground;
-  secondaryTitle: string;
-  secondaryDescription: string;
-  linkTo: string;
-  linkTitle: string;
+  secondaryImage: string
+  secondaryImageAlt?: string
+  secondaryImagePosition?: ImagePositionOnBackground
+  secondaryTitle: string
+  secondaryDescription: string
+  linkTo?: string
+  linkTitle?: string
 }
 
 export default function ImageAndText({
@@ -45,8 +45,10 @@ export default function ImageAndText({
       <div className="flex flex-col gap-y-6 px-5 lg:px-0">
         <TextInfo title={secondaryTitle} description={secondaryDescription} />
         {/* Link */}
-        <CustomLink to={linkTo} title={linkTitle} />
+        {linkTitle ? (
+          <CustomLink to={linkTo || ""} title={linkTitle || ""} />
+        ) : null}
       </div>
     </div>
-  );
+  )
 }

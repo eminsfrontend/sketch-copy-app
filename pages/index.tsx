@@ -1,6 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
 import {
   Button,
   TitleArea,
@@ -9,9 +9,11 @@ import {
   ImageAndText,
   LabeledArea,
   FormArea,
-} from "../components";
-import { bigImageLayoutDirectionType } from "../components/layoutComponent/bigImageLayout";
-import { ImagePositionOnBackground } from "../components/layoutComponent/imageAndText";
+  SimpleForm,
+  InfoArea,
+} from "../components"
+import { bigImageLayoutDirectionType } from "../components/layoutComponent/bigImageLayout"
+import { ImagePositionOnBackground } from "../components/layoutComponent/imageAndText"
 
 export default function Home() {
   return (
@@ -23,6 +25,7 @@ export default function Home() {
       </Head>
 
       {/* Infoline Area */}
+      <InfoArea />
       <Link
         href="/"
         className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-vivaMagenta shadow-extraLight"
@@ -77,13 +80,13 @@ export default function Home() {
       </header>
 
       <main className="overflow-hidden">
-        {/* Title Area */}
+        {/* ------------------------------------ Title Area ------------------------------------ */}
         <section className="container max-w-6xl mx-auto px-8 pt-24 min-h-[60vh]">
           <TitleArea
-            title="Everything you need to prototype"
-            description="Sketch gives you all the tools you need for a truly collaborative design process. From early ideas to pixel-perfect artwork, playable prototypes and developer handoff. It all starts here."
+            title="Элитный ремонт в Москве и МО"
+            description="Мы бригада профессиональных строителей. Более 30 лет строим и ремонтируем объекты бизнес и премиум класса. Реализуем проекты под ключ и участвуем в качестве приглашенных специалистов."
           />
-          <Button title="Get Started for Free" />
+          <Button title="Получить консультацию" />
         </section>
 
         {/* ------------------------------------ Slider Area (Not ready) ------------------------------------ */}
@@ -96,17 +99,14 @@ export default function Home() {
           bgImageWidth={2040}
           bgImageHeight={1150}
           mainImageOrVideo="real-time-collab-visual-v90"
-          title="The all-in-one designer’s toolkit"
-          description="More than just UI design tools – if you’re collaborating on new concepts, building beautiful prototypes or crafting the perfect app icon, we’ve got your whole design process covered."
+          title="Весь комплекс работ в одном месте"
+          description="От замеров до сданного объекта – все работы мы выполняем своими силами, либо с привлечением проверенных годами специалистов, работающих по нашим стандартам."
           secondaryImage="native@2x"
           secondaryImageAlt="secondary-image"
-          secondaryTitle="Native macOS editor"
-          secondaryDescription="Create your best work with an intuitive UI, thoughtful
-          features and all the benefits you’d expect from a great
-          Mac app (like support for P3 color profiles, native font
-          rendering, and super-fast Apple Silicon performance)."
+          secondaryTitle="Качество в каждой детали"
+          secondaryDescription="Мы отвечаем за надежность создаваемых конкструкций и их долговечность, благодаря многоуровневому контролю качества и предлагаем нашим клиентам постоянный мониторинг состояния объекта после его сдачи."
           linkTo="/"
-          linkTitle="Explore your design toolkit"
+          linkTitle="Подробнее о наших стандартах"
         />
 
         {/* ------------------------------------ Area 2 ------------------------------------ */}
@@ -116,12 +116,10 @@ export default function Home() {
               secondaryImage="prototyping@2x"
               secondaryImageAlt="text-title-1"
               secondaryImagePosition={ImagePositionOnBackground.end}
-              secondaryTitle="Prototyping"
-              secondaryDescription="Bring your designs to life with easy-to-use tools. Test
-              prototypes on your devices. Or share a link with others so they
-              can try them out in any browser and give their feedback, for
-              free. With no plugins required."
-              linkTitle="Discover Prototyping in Sketch"
+              secondaryTitle="По последним технологиям"
+              secondaryDescription="Современное строительство и отделочные работы - это постоянно меняющиеся тренды и технологии. 
+              Мы следим за новинками и предлагаем своим клиентам проверенные решения, сочетающие в себе технологичность, премиальность и удобство эксплуатации."
+              linkTitle="Элементы премиального ремонта"
               linkTo="/"
             />
           }
@@ -129,12 +127,10 @@ export default function Home() {
             <ImageAndText
               secondaryImage="collaboration@2x"
               secondaryImageAlt="text-title-2"
-              secondaryTitle="Real-time collaboration"
-              secondaryDescription="Work together in the same document, at the same time — right
-              inside the Mac app. No hassle, no save conflicts, no pinging
-              files back and forth. Just you, your collaborators, and an
-              infinite Canvas to explore."
-              linkTitle="See collaboration in action"
+              secondaryTitle="В коллаборации с лучшими дизайнерами"
+              secondaryDescription="Мы не держим в штате дизайнеров, а предпочитаем выбирать лучших специалистов в своей области. 
+              Когда над каждым проектом работают одни и те же люди, результат начинает повторяться, а мы за свежие идеи и нестандартное мышление."
+              linkTitle="Проекты с нашим участием"
               linkTo="/"
             />
           }
@@ -148,20 +144,15 @@ export default function Home() {
           bgImageWidth={773}
           bgImageHeight={773}
           mainImageOrVideo="handoff-visual-2"
-          title="Scale up your design process"
-          description="Bring your projects and people together, share feedback,
-          hand off to developers, and build out beautiful design
-          systems — all in one place."
+          title="Персональный подход в работе"
+          description="Создаем уникальные жилые пространства, в которых продумана каждая деталь. 
+          Каждое решение выверено и решает задачи, поставленные вами перед проектной командой."
           secondaryImage="workspaces@2x"
           secondaryImageAlt="workspace-alt"
-          secondaryTitle="Workspaces"
-          secondaryDescription="With a Sketch Workspace, you get a home for storing
-          files, sharing ideas, getting feedback, managing your
-          team, distributing Libraries, handing off to developers
-          and exploring your Design System. It’s all included in
-          your subscription."
+          secondaryTitle="Выбирайте сами степень участия"
+          secondaryDescription="Мы можем выполнить строительные и отделочные работы с минимальным участием заказчика, либо с полным погружением в рабочие процессы - все зависит только от вашего времени и желания."
           linkTo="/"
-          linkTitle="See what a Workspace can do"
+          linkTitle="Подробнее о моделях взаимодействия"
         />
 
         {/* ------------------------------------ Area 4 ------------------------------------ */}
@@ -171,25 +162,19 @@ export default function Home() {
               secondaryImage="design-systems@2x"
               secondaryImageAlt="text-title-3"
               secondaryImagePosition={ImagePositionOnBackground.center}
-              secondaryTitle="Design systems"
-              secondaryDescription="Build out your design systems with reusable Styles and
-              responsive Symbols. Manage them effortlessly on the Mac app or
-              in the browser, share them with your team and update them
-              everywhere in seconds."
-              linkTitle="Discover design systems"
-              linkTo="/"
+              secondaryTitle="Результат, соответствующий ожиданиям"
+              secondaryDescription="Наш подход не вредставляет возможным старт ремонтных работ без дизайн-проекта. Чем детальнее проработан пакет документов, тем
+              проще выполнить работы в строго указанные сроки без необходимости вносить серьезные правки."
             />
           }
           rightArea={
             <ImageAndText
               secondaryImage="collaboration@2x"
               secondaryImageAlt="text-title-2"
-              secondaryTitle="Developer handoff"
-              secondaryDescription="Invite developers to inspect and measure designs, then download
-              production-ready assets, all for free. They don’t need the Mac
-              app (or even a Mac) or third-party plugins. Just their favorite
-              browser. And you know they have a favorite."
-              linkTitle="Try developer handoff now"
+              secondaryTitle="Современные системы умного дома"
+              secondaryDescription="В нашем понимании современный дом или квартира - это технологичное и безопасное пространство, где каждый элемент делает жизнь собственника проще и удобнее. 
+              От входной двери, до принтера - мы можем продумать любые сценарии взаимодействия."
+              linkTitle="Про умные технологии"
               linkTo="/"
             />
           }
@@ -202,8 +187,8 @@ export default function Home() {
               Больше преимуществ
             </h3>
             <p className="text-dark font-medium text-center text-base leading-6 md:text-lg md:leading-7">
-              We’re always shipping new updates to Sketch. Here’s a selection of
-              our latest features for you to explore.
+              Ощутите действительно премиальный сервис в области
+              строительно-отделочных работ без лишнего пафоса.
             </p>
           </div>
           {/* Grid */}
@@ -215,21 +200,9 @@ export default function Home() {
                 width={48}
                 height={48}
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
-                  Some link Info
-                </div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-0 xl:mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Документирование
+              </div>
             </div>
             <div className="c2 rounded-2xl bg-black bg-opacity-[3%] flex flex-col justify-end pb-6 items-center relative overflow-hidden">
               <Image
@@ -239,19 +212,9 @@ export default function Home() {
                 height={312}
                 className="absolute top-0 left-0 w-full"
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-6">Some link Info</div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Отчетность по затратам и работам
+              </div>
             </div>
             <div className="c3 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
               <Image
@@ -260,21 +223,9 @@ export default function Home() {
                 width={48}
                 height={48}
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
-                  Some link Info
-                </div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-0 xl:mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Авторский надзор
+              </div>
             </div>
             <div className="c4 rounded-2xl bg-black bg-opacity-[3%] flex flex-col justify-end pb-6 items-center relative overflow-hidden">
               <Image
@@ -284,19 +235,9 @@ export default function Home() {
                 height={778}
                 className="absolute top-0 left-0 w-full"
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-6">4 link</div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Поэтапная сдача работ
+              </div>
             </div>
             <div className="c5 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
               <Image
@@ -305,21 +246,9 @@ export default function Home() {
                 width={48}
                 height={48}
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
-                  Some link Info
-                </div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-0 xl:mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Комплектация объекта
+              </div>
             </div>
             <div className="c6 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
               <Image
@@ -328,21 +257,9 @@ export default function Home() {
                 width={48}
                 height={48}
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
-                  Some link Info
-                </div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-0 xl:mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Соблюдение сроков
+              </div>
             </div>
             <div className="c7 rounded-2xl bg-black bg-opacity-[3%] flex xl:flex-col justify-center items-center">
               <Image
@@ -351,35 +268,23 @@ export default function Home() {
                 width={48}
                 height={48}
               />
-              <Link
-                href="/"
-                className="text-dark font-bold text-base leading-6 flex items-center gap-x-1"
-              >
-                <div className="opacity-50 mt-0 ml-4 xl:mt-6">
-                  Some link Info
-                </div>
-                <Image
-                  src="/accets/icons/arrow-right.svg"
-                  alt="right-arrow"
-                  width={24}
-                  height={24}
-                  className="opacity-30 mt-0 xl:mt-6"
-                />
-              </Link>
+              <div className="opacity-50 lg:mt-6 ml-2 lg:ml-0 cursor-pointer text-dark font-bold text-base leading-6 flex justify-center items-center gap-x-1">
+                Личный кабинет{" "}
+                <span className="text-xs mb-2 opacity-60">Скоро</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Short Info Section with Label */}
         <LabeledArea
-          labelTitle="Extensions"
-          title="Больше преимуществ в нашем подходе"
-          description="Choose from hundreds of plugins, Assistants and integrations
-          that let you do everything from animating interactions to making
-          your designs more accessible."
+          labelTitle="Стоимость работ"
+          title="Цена / качество"
+          description="Мы не предлагаем дешевых услуг, но ценим каждый рубль, вложенный в ваше будущее жилище. 
+          Гибко подходим к вопросу ценообразования и индивидуально расчитываем стоимость работ по каждому объекту."
           haslink={true}
           linkTo="/"
-          linkTitle="Explore your design toolkit"
+          linkTitle="Подробнее о ценах"
         />
 
         {/* Form Area */}
@@ -393,10 +298,11 @@ export default function Home() {
                     alt="some-image"
                     width={64}
                     height={64}
-                    className="rounded-md"
+                    className="rounded-md shrink-0"
                   />
                   <p className="text-dark font-medium text-base leading-6">
-                    Inside Sketch: Long time no see? Discover the new Sketch
+                    Знакомство с клиентом, проведение замеров, подписание
+                    договора о сотрудничестве.
                   </p>
                 </div>
                 <div className="flex items-center gap-x-6 lg:px-11 pb-6 border-b border-black border-opacity-[15%]">
@@ -405,10 +311,11 @@ export default function Home() {
                     alt="some-image"
                     width={64}
                     height={64}
-                    className="rounded-md"
+                    className="rounded-md shrink-0"
                   />
                   <p className="text-dark font-medium text-base leading-6">
-                    Inside Sketch: Long time no see? Discover the new Sketch
+                    Подбор дизайнера и подготовка дизайн-проекта объекта, 3d
+                    визуализация.
                   </p>
                 </div>
                 <div className="flex items-center gap-x-6 lg:px-11 pb-6 last:border-none last:pb-0 border-b border-black border-opacity-[15%]">
@@ -417,10 +324,11 @@ export default function Home() {
                     alt="some-image"
                     width={64}
                     height={64}
-                    className="rounded-md"
+                    className="rounded-md shrink-0"
                   />
                   <p className="text-dark font-medium text-base leading-6">
-                    Inside Sketch: Long time no see? Discover the new Sketch
+                    Подготовка детальной сметы, обсуждение этапов работ и
+                    оплаты.
                   </p>
                 </div>
               </div>
@@ -428,44 +336,29 @@ export default function Home() {
             <div className="flex flex-1 flex-col gap-y-20 mt-20 lg:mt-0 md:px-32 lg:px-0">
               <div className="flex flex-col gap-y-6 px-5 md:px-0">
                 <h2 className="text-dark font-black text-subtitleMobile leading-subtitleMobile md:text-subtitleTablet md:leading-subtitleTablet lg:text-subtitleDesctop lg:leading-subtitleDesctop">
-                  Our blog
+                  Порядок взаимодействия
                 </h2>
                 <p className="text-dark font-medium text-base leading-6 md:text-lg md:leading-7">
-                  The latest news, greatest tutorials and inspiration that’ll
-                  make you say “I wish I’d done that!” From incredible things
-                  you can make with Sketch, to insights from the people who make
-                  Sketch happen.
+                  У нас подготовлен давно зарекомендовавший себя алгоритм
+                  действий, который приведет нас шаг за шагом к результату - от
+                  знакомства до сдачи готового объекта.
                 </p>
               </div>
             </div>
           </div>
           <LabeledArea
-            labelTitle="Extensions"
-            title="Больше преимуществ в нашем подходе"
-            description="Choose from hundreds of plugins, Assistants and integrations
-          that let you do everything from animating interactions to making
-          your designs more accessible."
+            labelTitle="В подарок первый месяц авторского надзора"
+            title="Оставьте заявку на ремонтные работы"
+            description="Получите профессиональную консультацию и ответы на все вопросы. Для этого достаточно оставить контактный номер телефона и наш специалист перезвонит в течение 10 минут."
             haslink={false}
             linkTo="/"
             linkTitle="Explore your design toolkit"
           />
           <div className="container max-w-6xl mx-auto flex flex-col gap-y-16 mb-24 px-4 md:px-32 xl:px-64 lg:px-0">
-            <form className="flex flex-col md:flex-row gap-y-4 gap-x-4 mt-8">
-              <input
-                type="tel"
-                placeholder="Введите номер телефона"
-                className="flex-3 px-4 py-3 w-full md:max-w-[300px] lg:max-w-[400px] rounded-md"
-              />
-              <button
-                type="submit"
-                className="flex-1 bg-black font-bold text-white text-base py-3 px-4 rounded-md"
-              >
-                Отправить запрос
-              </button>
-            </form>
+            <SimpleForm />
           </div>
         </section>
       </main>
     </>
-  );
+  )
 }
