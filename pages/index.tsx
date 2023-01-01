@@ -26,20 +26,7 @@ export default function Home() {
 
       {/* Infoline Area */}
       <InfoArea />
-      <Link
-        href="/"
-        className="fixed px-8 md:px-0 py-4 md:py-2 bottom-0 left-0 md:relative w-full z-50 flex md:justify-center items-center min-h-10 bg-white md:bg-vivaMagenta shadow-extraLight"
-      >
-        <span className="text-dark font-bold text-xs flex items-center gap-x-1 md:text-white">
-          Ready to create your best work?!
-          <Image
-            src="/accets/icons/arrow-right-white.svg"
-            alt="right-arrow"
-            width={24}
-            height={24}
-          />
-        </span>
-      </Link>
+      
 
       {/* Heared Area */}
       <header className="bg-white md:bg-transparent fixed top-0 md:relative w-full z-50 bg-opacity-80 backdrop-blur-sm shadow-extraLight">
