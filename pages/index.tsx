@@ -79,10 +79,6 @@ export default function Home() {
         {/* ------------------------------------ Area 1 ------------------------------------ */}
         <BigImageLayout
           imageDirection={bigImageLayoutDirectionType.leading}
-          bgImage="eye-bg"
-          bgImageAlt="eye-background"
-          bgImageWidth={2040}
-          bgImageHeight={1150}
           mainImageOrVideo="real-time-collab-visual-v90"
           title="Весь комплекс работ в одном месте"
           description="От замеров до сданного объекта – все работы мы выполняем своими силами, либо с привлечением проверенных годами специалистов, работающих по нашим стандартам."
@@ -124,10 +120,6 @@ export default function Home() {
         {/* ------------------------------------ Area 3 ------------------------------------ */}
         <BigImageLayout
           imageDirection={bigImageLayoutDirectionType.trailing}
-          bgImage="rectangular-shape-bg"
-          bgImageAlt="rect-bg"
-          bgImageWidth={773}
-          bgImageHeight={773}
           mainImageOrVideo="handoff-visual-2"
           title="Персональный подход в работе"
           description="Создаем уникальные жилые пространства, в которых продумана каждая деталь. 

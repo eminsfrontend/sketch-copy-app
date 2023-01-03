@@ -11,10 +11,6 @@ export enum bigImageLayoutDirectionType {
 
 interface bigImageLayoutProps {
   imageDirection: bigImageLayoutDirectionType;
-  bgImage: string;
-  bgImageAlt?: string;
-  bgImageWidth: number;
-  bgImageHeight: number;
   mainImageOrVideo: string;
   mainImageOrVideoAlt?: string;
   title: string;
@@ -29,10 +25,6 @@ interface bigImageLayoutProps {
 
 export default function bigImageLayout({
   imageDirection,
-  bgImage,
-  bgImageAlt,
-  bgImageWidth,
-  bgImageHeight,
   mainImageOrVideo,
   mainImageOrVideoAlt,
   title,
@@ -47,7 +39,7 @@ export default function bigImageLayout({
   return (
     <section className="min-h-screen w-full flex flex-col items-center relative px-4 lg:px-0 py-16">
       {/* Background paralax image */}
-      <div
+      {/* <div
         className={`absolute -z-10 lg:top-1/2 lg:-translate-y-1/2 ${
           imageDirection === bigImageLayoutDirectionType.leading
             ? "ml-6 lg:ml-0 -right-1/2 lg:-right-0 lg:-left-[53%]"
@@ -61,7 +53,7 @@ export default function bigImageLayout({
           height={bgImageHeight}
           loading="lazy"
         />
-      </div>
+      </div> */}
       <div className="overflow-hidden relative w-full min-h-screen flex flex-col justify-center items-center">
         {/* Image/video container */}
         <div

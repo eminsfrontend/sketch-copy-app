@@ -13,7 +13,7 @@ export default function Navigation() {
       <Link href="/">Услуги</Link>
       <Link href="/">Проекты</Link>
       <Link href="/">Цены</Link>
-      <div className="relative">
+      <div className="relative xl:hidden">
         {/* Dots */}
         <div className="flex gap-x-1 py-2 lg:hidden" onClick={handlePopup}>
           <div className="w-1 h-1 rounded-full bg-dark" />
@@ -30,7 +30,7 @@ export default function Navigation() {
           <Link href="/">Контакты</Link>
         </div>
       </div>
-      <div className="hidden ml-4 lg:ml-0 lg:flex gap-x-4">
+      <div className="hidden ml-4 lg:ml-0 lg:flex gap-x-4 xl:gap-x-10">
         <Link href="/">О нас</Link>
         <Link href="/">Контакты</Link>
       </div>
