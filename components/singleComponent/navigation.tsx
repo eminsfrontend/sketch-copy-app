@@ -12,7 +12,7 @@ export default function Navigation() {
     <div className="hidden md:flex items-center gap-x-4 xl:gap-x-10 text-dark font-bold text-sm">
       <Link href="/service">Услуги</Link>
       <Link href="/">Проекты</Link>
-      <Link href="/">Цены</Link>
+      <Link href="/price">Цены</Link>
       <div className="relative xl:hidden">
         {/* Dots */}
         <div className="flex gap-x-1 py-2 lg:hidden" onClick={handlePopup}>

@@ -53,7 +53,7 @@ export default function Menu() {
           <Link href="/" className="py-4">
             Проекты
           </Link>
-          <Link href="/" className="py-4">
+          <Link href="/price" className="py-4">
             Цены
           </Link>
           <Link href="/" className="py-4">
