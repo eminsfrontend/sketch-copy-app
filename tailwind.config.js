@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ["Raleway", "sans-serif"],
-      inter: ["Inter", "sans-serif"]
+      montserrat: ["Montserrat", "sans-serif"],
     },
     colors: {
       black: "#000000",

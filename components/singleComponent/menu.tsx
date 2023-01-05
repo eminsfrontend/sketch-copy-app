@@ -47,7 +47,7 @@ export default function Menu() {
           <span className="text-lg">Quazar</span>
         </div>
         <div className="flex flex-col items-start gap-y-4">
-          <Link href="/" className="py-4">
+          <Link href="/service" className="py-4">
             Услуги
           </Link>
           <Link href="/" className="py-4">

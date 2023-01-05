@@ -17,7 +17,7 @@ interface bigImageLayoutProps {
   description: string;
   secondaryTitle: string;
   secondaryDescription: string;
-  secondaryImage: string;
+  secondaryImage?: string;
   secondaryImageAlt?: string;
   linkTo: string;
   linkTitle: string;
@@ -91,7 +91,7 @@ export default function bigImageLayout({
             </div>
             {/* Secondary Title Area */}
             <ImageAndText
-              secondaryImage={secondaryImage}
+              secondaryImage={secondaryImage || undefined}
               secondaryImageAlt={secondaryImageAlt || secondaryTitle}
               secondaryTitle={secondaryTitle}
               secondaryDescription={secondaryDescription}

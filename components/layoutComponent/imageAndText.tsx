@@ -8,7 +8,7 @@ export enum ImagePositionOnBackground {
 }
 
 interface ImageAndTextProps {
-  secondaryImage: string
+  secondaryImage?: string
   secondaryImageAlt?: string
   secondaryImagePosition?: ImagePositionOnBackground
   secondaryTitle: string
@@ -29,19 +29,21 @@ export default function ImageAndText({
   return (
     <div className="flex flex-col gap-y-8">
       {/* Secondary Image */}
-      <div
-        className={`relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex ${
-          secondaryImagePosition ? "items-end" : "items-center"
-        }`}
-      >
-        <Image
-          src={`/accets/images/${secondaryImage}.avif`}
-          alt={secondaryImageAlt || secondaryTitle}
-          width={524}
-          height={216}
-          loading="lazy"
-        />
-      </div>
+      {secondaryImage ? (
+        <div
+          className={`relative rounded-xl shadow-doubled bg-black bg-opacity-[2%] h-52 lg:h-fit flex ${
+            secondaryImagePosition ? "items-end" : "items-center"
+          }`}
+        >
+          <Image
+            src={`/accets/images/${secondaryImage}.avif`}
+            alt={secondaryImageAlt || secondaryTitle}
+            width={524}
+            height={216}
+            loading="lazy"
+          />
+        </div>
+      ) : null}
       <div className="flex flex-col gap-y-6 px-5 lg:px-0">
         <TextInfo title={secondaryTitle} description={secondaryDescription} />
         {/* Link */}
