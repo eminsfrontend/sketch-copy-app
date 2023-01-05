@@ -1,5 +1,12 @@
 import Head from "next/head"
-import { Header, InfoArea, TitleArea } from "../components"
+import {
+  Header,
+  ImageAndText,
+  ImageTextGrid,
+  InfoArea,
+  TitleArea,
+} from "../components"
+import { ImagePositionOnBackground } from "../components/layoutComponent/imageAndText"
 
 export default function Price() {
   return (
@@ -19,24 +26,28 @@ export default function Price() {
           description="Хотим обратить ваше внимание, что в ремонтных работах подобного уровня не существует четких границ. Каждый проект - индивидуальная смета и очень много элементов влияет на финальную цену."
           buttonTitle="Рассчитать стоимость работ"
         />
-        <div className="text-dark container max-w-6xl mx-auto flex flex-col lg:flex-row lg:justify-between lg:gap-x-6">
-          <div className="bg-green bg-opacity-80 p-10 flex flex-col flex-1 w-full rounded-xl">
-            <h2 className=" font-black  text-3xl leading-7 text-center">
-              Премиум
-            </h2>
-            <div className="flex justify-center  gap-x-6 my-6 p-4">
-              <div className="font-bold font-montserrat text-dark text-2xl">
-                20 000
-              </div>
-              <div className="flex flex-col">
-                <span className="font-semibold text-lg">За квадратный метр</span>
-                <span>стоимость работ </span>
-              </div>
-            </div>
-          </div>
-          <div className="bg-green bg-opacity-80 p-10 flex flex-1 justify-center w-full rounded-xl">
-            <h2 className="text-dark font-bold text-xl leading-7">Эксклюзив</h2>
-          </div>
+        <div className="mt-32">
+          <ImageTextGrid
+            leftArea={
+              <ImageAndText
+                secondaryImage="prototyping@2x"
+                secondaryImageAlt="text-title-1"
+                secondaryImagePosition={ImagePositionOnBackground.end}
+                secondaryTitle="Премиум - от 20 000 руб. за кв. м."
+                secondaryDescription="Мы не держим в штате дизайнеров, а предпочитаем выбирать лучших специалистов в своей области. 
+              Когда над каждым проек."
+              />
+            }
+            rightArea={
+              <ImageAndText
+                secondaryImage="collaboration@2x"
+                secondaryImageAlt="text-title-2"
+                secondaryTitle="Эксклюзив - от 35 000 руб. за кв. м."
+                secondaryDescription="Мы не держим в штате дизайнеров, а предпочитаем выбирать лучших специалистов в своей области. 
+              Когда над каждым проектом работают одни и те же люди, результат начинает повторяться, а мы за свежие идеи и нестандартное мышление."
+              />
+            }
+          />
         </div>
       </main>
     </>
