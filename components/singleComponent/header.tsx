@@ -34,7 +34,7 @@ export default function Header() {
             />
             <a
               href="tel:+79612032707"
-              className="font-montserrat font-semibold"
+              className="font-montserrat font-semibold text-sm"
             >
               +7 495 203 27 07
             </a>
